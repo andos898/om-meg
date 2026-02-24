@@ -1,1 +1,234 @@
+:root {
+    --bg: #eef0ed;
+    --card: #ffffff;
+    --text: #111111;
+    --muted: #585858;
+    --line: #d6dad5;
+    --border: #111111;
+    --yellow: #f4d200;
+    --green: #98e49d;
+    --purple: #beb7e9;
+    --blue: #8ec0e6;
+    --teal: #6fd6d4;
+}
 
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Inter", Arial, sans-serif;
+    color: var(--text);
+    background-color: var(--bg);
+    background-image: radial-gradient(circle at 10% 20%, rgba(0, 0, 0, 0.06) 1px, transparent 1px), radial-gradient(circle at 85% 30%, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 46px 46px, 64px 64px;
+    padding: 28px 14px 40px;
+}
+
+.page {
+    width: min(980px, 100%);
+    margin: 0 auto;
+    display: grid;
+    gap: 18px;
+}
+
+.hero-card,
+.content-card {
+    background: var(--card);
+    border: 2px solid var(--line);
+    border-radius: 20px;
+    padding: 24px;
+}
+
+.hero-card {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 24px;
+    align-items: center;
+}
+
+.avatar {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 4px solid var(--border);
+    object-fit: cover;
+    justify-self: center;
+}
+
+.hero-content h1 {
+    margin: 0;
+    font-family: "Sen", "Inter", sans-serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.05;
+}
+
+.subtitle {
+    margin: 8px 0 16px;
+    color: var(--muted);
+    font-size: 1rem;
+}
+
+.social-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.social {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    text-decoration: none;
+    color: #000;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.instagram { background: var(--yellow); }
+.email { background: var(--green); }
+.x { background: var(--purple); }
+.facebook { background: var(--blue); }
+.linkedin { background: var(--teal); }
+
+
+.instagram svg {
+    width: 30px;
+    height: 30px;
+}
+
+.email svg {
+    width: 30px;
+    height: 30px;
+}
+
+
+.email-line {
+    margin: 14px 0;
+    color: var(--muted);
+}
+
+.landing-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    min-height: 46px;
+    padding: 0 18px;
+    border: 2px solid var(--border);
+    border-radius: 999px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+    background: var(--yellow);
+}
+
+.content-card h2 {
+    margin: 0 0 12px;
+    font-family: "Sen", "Inter", sans-serif;
+    font-size: clamp(1.5rem, 2.3vw, 2.1rem);
+}
+
+.content-card h3 {
+    margin: 0 0 8px;
+    font-size: 1rem;
+}
+
+.content-card p {
+    margin: 0 0 10px;
+    color: #232323;
+    line-height: 1.68;
+}
+
+.two-col {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+ul {
+    margin: 0;
+    padding-left: 18px;
+    line-height: 1.65;
+}
+
+.experience-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+}
+
+.experience-list li {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 14px;
+    background: #fcfcfc;
+}
+
+.experience-list span {
+    display: block;
+    margin-top: 6px;
+    color: #2b2b2b;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    background: #e9ece8;
+}
+
+footer {
+    text-align: center;
+    color: #666;
+    padding-top: 40px;
+}
+
+@media (max-width: 900px) {
+    .hero-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 700px) {
+    .two-col {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero-card,
+    .content-card {
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    .avatar {
+        width: 170px;
+        height: 170px;
+    }
+}
