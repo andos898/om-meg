@@ -1,0 +1,154 @@
+:root {
+    --bg: #eef0ed;
+    --text: #0f0f0f;
+    --muted: #575757;
+    --border: #111111;
+    --yellow: #f4d200;
+    --green: #98e49d;
+    --purple: #beb7e9;
+    --blue: #8ec0e6;
+    --teal: #6fd6d4;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Poppins", "Trebuchet MS", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    display: grid;
+    place-items: center;
+    padding: 28px 16px;
+}
+
+.page {
+    width: min(760px, 100%);
+    text-align: center;
+}
+
+.profile-image {
+    width: 184px;
+    height: 184px;
+    border-radius: 50%;
+    border: 4px solid var(--border);
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 28px;
+    background: #fff;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.intro {
+    margin: 28px auto 42px;
+    width: 100%;
+    color: var(--muted);
+    font-size: clamp(1rem, 2.2vw, 1.85rem);
+    line-height: 1.75;
+    font-weight: 400;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 0 0 46px;
+    padding: 0;
+    list-style: none;
+}
+
+.social-link {
+    width: 94px;
+    height: 94px;
+    border: 3px solid var(--border);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: #000;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+    transform: translateY(-3px);
+}
+
+.social-link svg {
+    width: 44px;
+    height: 44px;
+    fill: currentColor;
+}
+
+.instagram { background: var(--yellow); }
+.email { background: var(--green); }
+.x { background: var(--purple); }
+.facebook { background: var(--blue); }
+.linkedin { background: var(--teal); }
+
+.cta {
+    width: 100%;
+    min-height: 84px;
+    border: 3px solid var(--border);
+    border-radius: 999px;
+    background: var(--yellow);
+    color: #000;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 36px;
+    font-size: clamp(1.15rem, 2vw, 1.85rem);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    margin: 0 auto 46px;
+}
+
+.arrow {
+    font-size: 2.2rem;
+    font-weight: 500;
+    line-height: 1;
+}
+
+footer {
+    color: #777;
+    font-size: 1rem;
+}
+
+@media (max-width: 640px) {
+    .profile-image {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 22px;
+    }
+
+    .social-link {
+        width: 78px;
+        height: 78px;
+        border-width: 2px;
+    }
+
+    .social-link svg {
+        width: 36px;
+        height: 36px;
+    }
+
+    .cta {
+        min-height: 72px;
+        padding: 14px 22px;
+    }
+
+    .arrow {
+        font-size: 1.9rem;
+    }
+}
